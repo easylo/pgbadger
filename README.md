@@ -6,7 +6,7 @@ A fast PostgreSQL log analyzer with S3 upload
 
 edit docker-compose.yml
 
-’’’
+```bash
 ...
     environment:
       PGBADGER_DATA: "/data"
@@ -18,10 +18,10 @@ edit docker-compose.yml
       - "./pg_log:/var/log/postgresql"
       - "./data:/data"
 
-’’’
+```
 
 # RUN
 
-’’’
+```bash
 docker-compose up 
-’’’
+```
