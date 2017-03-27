@@ -1,7 +1,8 @@
 version: '2'
 services:
   pgbadger:
-    build: .
+    image: laurentrichard/pgbadger
+    # build: .
     command: /var/log/postgresql/postgresql-*
     container_name: pgbadger
     environment:
