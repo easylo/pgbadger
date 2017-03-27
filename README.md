@@ -1,5 +1,6 @@
 # pgbadger
 
+A fast PostgreSQL log analyzer with S3 upload
 
 # setup
 
