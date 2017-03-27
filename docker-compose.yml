@@ -1,0 +1,15 @@
+version: '2'
+services:
+  pgbadger:
+    build: .
+    command: /var/log/postgresql/postgresql-*
+    container_name: pgbadger
+    environment:
+      PGBADGER_DATA: "/data"
+      AWS_ACCESS_KEY: ""
+      AWS_SECRET_KEY: ""
+      AWS_S3_REGION: "eu-west-1"
+      AWS_S3_BUCKET: "pgbadger/www"
+    volumes:
+      - "./pg_log:/var/log/postgresql"
+      - "./data:/data"
