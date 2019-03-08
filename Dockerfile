@@ -10,7 +10,7 @@ ENV PGBADGER_DATA=/data
 ENV PGBADGER_VERSION=10.3
 
 RUN mkdir -p /data /opt
-RUN wget -O --no-check-certificate - https://github.com/darold/pgbadger/archive/v${PGBADGER_VERSION}.tar.gz | tar -zxvf - -C /opt
+RUN wget --no-check-certificate -O - https://github.com/darold/pgbadger/archive/v${PGBADGER_VERSION}.tar.gz | tar -zxvf - -C /opt
 RUN mv /opt/pgbadger-${PGBADGER_VERSION}/pgbadger /usr/local/bin/pgbadger
 RUN chmod +x /usr/local/bin/pgbadger
 
