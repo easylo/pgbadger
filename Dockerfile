@@ -7,10 +7,10 @@ RUN apk add --update openssl python coreutils perl
 WORKDIR /src
 
 ENV PGBADGER_DATA=/data
-ENV PGBADGER_VERSION=9.1
+ENV PGBADGER_VERSION=10.3
 
 RUN mkdir -p /data /opt
-RUN wget -O - https://github.com/dalibo/pgbadger/archive/v${PGBADGER_VERSION}.tar.gz | tar -zxvf - -C /opt
+RUN wget -O - https://github.com/darold/pgbadger/archive/v${PGBADGER_VERSION}.tar.gz | tar -zxvf - -C /opt
 RUN mv /opt/pgbadger-${PGBADGER_VERSION}/pgbadger /usr/local/bin/pgbadger
 RUN chmod +x /usr/local/bin/pgbadger
 
