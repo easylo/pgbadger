@@ -20,7 +20,7 @@ RUN /usr/bin/perl -MCPAN -e'install JSON::XS'
 
 WORKDIR /opt
 # add aws cli
-RUN wget "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
+RUN wget --no-check-certificate "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
 RUN unzip awscli-bundle.zip
 RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
