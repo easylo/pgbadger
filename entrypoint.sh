@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-env
-
 if [ "$1" != "pgbadger" ]; then
   set -- pgbadger "$@"
 fi
