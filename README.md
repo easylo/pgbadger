@@ -2,6 +2,10 @@
 
 A fast PostgreSQL log analyzer with S3 upload
 
+# docker
+
+https://hub.docker.com/r/laurentrichard/pgbadger
+
 # setup
 
 edit docker-compose.yml
