@@ -1,8 +1,10 @@
-FROM alpine:3.5
+FROM alpine:edge
 
-MAINTAINER Laurent RICHARD <easylo@gmail.com>
+LABEL maintainer="Laurent RICHARD <easylo@gmail.com>"
 
-RUN apk add --update openssl python coreutils perl
+RUN apk update && \
+    apk add --update openssl python coreutils perl && \
+    apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/testing perl-json-xs
 
 WORKDIR /src
 

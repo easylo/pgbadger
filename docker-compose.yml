@@ -3,14 +3,17 @@ services:
   pgbadger:
     image: laurentrichard/pgbadger
     # build: .
-    command: /var/log/postgresql/postgresql-*
+    command: ["pgbadger", "/var/log/postgresql/postgresql-*"]
     container_name: pgbadger
     environment:
       PGBADGER_DATA: "/data"
       AWS_ACCESS_KEY: ""
       AWS_SECRET_KEY: ""
-      AWS_S3_REGION: "eu-west-1"
-      AWS_S3_BUCKET: "pgbadger/www"
+      AWS_S3_REGION: "eu-west-3"
+      AWS_S3_BUCKET: "pgbadger/prod"
+      CRON: 0
+      CRON_PATTERN: "0 4 * * *"
+      PGBADGER_PREFIX: '%t [%p-%l] user=%u,db=%d '
     volumes:
       - "./pg_log:/var/log/postgresql"
       - "./data:/data"
