@@ -4,7 +4,7 @@ LABEL maintainer="Laurent RICHARD <easylo@gmail.com>"
 
 RUN apk update && \
     apk add --update openssl python coreutils perl && \
-    apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/testing perl-json-xs
+    apk add -X http://dl-cdn.alpinelinux.org/alpine/edge/testing perl-json-xs gzip
 
 WORKDIR /src
 
