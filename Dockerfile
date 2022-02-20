@@ -9,7 +9,7 @@ RUN apk update && \
 WORKDIR /src
 
 ENV PGBADGER_DATA=/data
-ENV PGBADGER_VERSION=10.3
+ENV PGBADGER_VERSION=11.7
 
 RUN mkdir -p /data /opt
 RUN wget --no-check-certificate -O - https://github.com/darold/pgbadger/archive/v${PGBADGER_VERSION}.tar.gz | tar -zxvf - -C /opt
